@@ -5,6 +5,11 @@ angular.module('NoteWrangler').directive('nwCard', [function() {
     scope: {
       header: "=",
       description: "="
+    },
+    link: function(scope, element){
+      if(scope.tweeted) {
+        element.addClass('tweeted');
+      }
     }
   };
 }]);
