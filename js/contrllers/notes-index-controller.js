@@ -1,7 +1,7 @@
 angular.module('NoteWrangler')
-.controller('NotesIndexController', ['$http', '$scope', function($http, $scope) {
-  var controller = this;
-  $http({method: 'GET', url: '/notes'}).success(function(data) {
+.controller('NotesIndexController', ['$scope', 'Note', function($scope, Note) {
+  Note.all()
+  .success(function(data){
     $scope.notes = data;
   });
 }]);
